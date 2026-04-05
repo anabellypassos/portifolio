@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import profile from './assets/profile.jpeg';
 import adm from './assets/adm.png';
+import office from '../src/assets/office.png'
 import {
     Github,
     Linkedin,
@@ -32,6 +33,7 @@ const FadeIn = ({ children, delay = 0, x = 0, y = 20 }) => (
 
 export default function Portfolio() {
     const techStack = ["React", "Node.js", "Prisma", "PostgreSQL", "Tailwind CSS", "JWT"];
+    const DocMind= ["React","TypeScript","Supabase","Tailwind CSS","OpenAI API"]
 
     return (
         <div className="bg-[#0b0f1a] min-h-screen text-slate-300 selection:bg-blue-500/30 font-sans scroll-smooth overflow-x-hidden">
@@ -200,6 +202,52 @@ export default function Portfolio() {
                             <div className="relative rounded-[1.5rem] md:rounded-[2rem] border border-white/10 overflow-hidden shadow-2xl bg-slate-900 aspect-video lg:aspect-auto">
                                 <img
                                     src={adm}
+                                    className="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 transition duration-700 hover:scale-105"
+                                    alt="Project Preview"
+                                />
+                            </div>
+                        </div>
+                    </FadeIn>
+                    <FadeIn x={-30}>
+                        <div className="space-y-6 md:space-y-8">
+                            <div className="flex gap-2">
+                                <span className="px-3 py-1 bg-blue-500/10 border border-blue-500/20 text-blue-400 text-[10px] font-black uppercase tracking-widest rounded italic">DocMind AI</span>
+                            </div>
+
+                            <h3 className="text-4xl md:text-6xl font-black text-white leading-tight md:leading-none tracking-tighter">Workspace Inteligente de Produtividade</h3>
+
+                            <p className="text-base md:text-xl text-slate-400 leading-relaxed font-medium italic">
+                                Desenvolvi uma plataforma centralizada de produtividade que combina gestão de documentos com
+                                Inteligência Artificial, calendário de eventos e lista de tarefas.
+                                O objetivo é reduzir a troca de abas (context switching) ao unir escrita
+                                inteligente e organização em um único lugar.
+                            </p>
+
+                            <div className="flex flex-wrap gap-2 md:gap-3">
+                                {DocMind.map(tech => (
+                                    <span key={tech} className="px-3 py-1.5 md:px-4 md:py-2 bg-white/5 border border-white/10 rounded-lg md:rounded-xl text-[10px] md:text-xs text-slate-300 font-bold uppercase italic tracking-wider">
+                                        {tech}
+                                    </span>
+                                ))}
+                            </div>
+
+                            <div className="flex flex-col sm:flex-row gap-6 pt-4">
+                                <a href="https://office-magic.vercel.app/" target="_blank" rel="noreferrer" className="group flex items-center justify-center sm:justify-start gap-2 text-white font-black text-base md:text-lg hover:text-blue-400 transition duration-300 uppercase italic underline underline-offset-8 decoration-blue-500">
+                                    Live Preview <ExternalLink size={20} />
+                                </a>
+                                <a href="https://github.com/anabellypassos" target="_blank" rel="noreferrer" className="group flex items-center justify-center sm:justify-start gap-2 text-slate-500 font-black text-base md:text-lg hover:text-white transition duration-300 uppercase italic">
+                                    Github
+                                </a>
+                            </div>
+                        </div>
+                    </FadeIn>
+
+                    <FadeIn x={30} delay={0.2}>
+                        <div className="relative group cursor-pointer mt-8 lg:mt-0">
+                            <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-[1.5rem] md:rounded-[2rem] blur opacity-20 group-hover:opacity-40 transition duration-1000"></div>
+                            <div className="relative rounded-[1.5rem] md:rounded-[2rem] border border-white/10 overflow-hidden shadow-2xl bg-slate-900 aspect-video lg:aspect-auto">
+                                <img
+                                    src={office}
                                     className="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 transition duration-700 hover:scale-105"
                                     alt="Project Preview"
                                 />
