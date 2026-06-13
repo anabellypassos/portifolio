@@ -2,8 +2,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import profile from './assets/profile.jpeg';
 import adm from './assets/adm.png';
-import office from './assets/office.png'; // Ajustado para ./
-import adv from './assets/adv.png';       // Ajustado para ./
+import office from './assets/office.png'; 
+import adv from './assets/adv-projeto.png';
 
 import {
     Github,
