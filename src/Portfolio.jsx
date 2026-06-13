@@ -2,8 +2,9 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import profile from './assets/profile.jpeg';
 import adm from './assets/adm.png';
-import office from '../src/assets/office.png';
-import adv from '../src/assets/adv.png';
+import office from './assets/office.png'; // Ajustado para ./
+import adv from './assets/adv.png';       // Ajustado para ./
+
 import {
     Github,
     Linkedin,
@@ -204,7 +205,7 @@ export default function Portfolio() {
                         </FadeIn>
                     </div>
 
-                    {/* PROJETO 2 - DOCMIND */}
+                    {/* PROJETO 2 - DOCMIND AI */}
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
                         <FadeIn x={-30}>
                             <div className="space-y-6 md:space-y-8">
@@ -276,7 +277,6 @@ export default function Portfolio() {
                             <div className="relative group cursor-pointer">
                                 <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-[1.5rem] md:rounded-[2rem] blur opacity-20 group-hover:opacity-40 transition duration-1000"></div>
                                 <div className="relative rounded-[1.5rem] md:rounded-[2rem] border border-white/10 overflow-hidden shadow-2xl bg-slate-900 aspect-video lg:aspect-auto">
-                                    {/* Agora a variável 'adv' está definida via import no topo */}
                                     <img src={adv} className="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 transition duration-700 hover:scale-105" alt="Advocacia Preview" />
                                 </div>
                             </div>
