@@ -2,7 +2,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import profile from './assets/profile.jpeg';
 import adm from './assets/adm.png';
-import office from '../src/assets/office.png'
+import office from '../src/assets/office.png';
+import adv from '../src/assets/adv.png';
 import {
     Github,
     Linkedin,
@@ -33,12 +34,13 @@ const FadeIn = ({ children, delay = 0, x = 0, y = 20 }) => (
 
 export default function Portfolio() {
     const techStack = ["React", "Node.js", "Prisma", "PostgreSQL", "Tailwind CSS", "JWT"];
-    const DocMind= ["React","TypeScript","Supabase","Tailwind CSS","OpenAI API"]
+    const DocMind = ["React", "TypeScript", "Supabase", "Tailwind CSS", "OpenAI API"];
+    const AdvocaciaStack = ["React", "Tailwind CSS", "Framer Motion", "SEO", "Mobile First"];
 
     return (
         <div className="bg-[#0b0f1a] min-h-screen text-slate-300 selection:bg-blue-500/30 font-sans scroll-smooth overflow-x-hidden">
 
-            {/* BACKGROUND GLOWS - Ajustados para não vazar no mobile */}
+            {/* BACKGROUND GLOWS */}
             <div className="fixed inset-0 overflow-hidden -z-10 pointer-events-none">
                 <div className="absolute top-[-10%] left-[-10%] w-[70%] md:w-[50%] h-[50%] rounded-full bg-blue-600/10 blur-[80px] md:blur-[120px]" />
                 <div className="absolute bottom-[-10%] right-[-10%] w-[70%] md:w-[50%] h-[50%] rounded-full bg-indigo-600/10 blur-[80px] md:blur-[120px]" />
@@ -68,7 +70,6 @@ export default function Portfolio() {
             <section className="relative pt-28 md:pt-40 lg:pt-48 pb-16 md:pb-20 px-4 sm:px-6">
                 <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
 
-                    {/* LADO ESQUERDO: TEXTO */}
                     <FadeIn x={-50}>
                         <div className="inline-flex items-center gap-2 px-3 py-1 md:px-4 md:py-1.5 rounded-full border border-blue-500/20 bg-blue-500/5 text-blue-400 text-[10px] md:text-xs font-black mb-6 md:mb-8 tracking-widest uppercase">
                             <Cpu size={14} /> Engenheira de Software Full Stack
@@ -96,7 +97,6 @@ export default function Portfolio() {
                         </div>
                     </FadeIn>
 
-                    {/* LADO DIREITO: SUA FOTO */}
                     <FadeIn x={50} delay={0.2}>
                         <div className="relative group w-full max-w-[300px] sm:max-w-[400px] lg:max-w-[450px] mx-auto lg:ml-auto mt-10 lg:mt-0">
                             <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-[2rem] md:rounded-[3rem] blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
@@ -163,97 +163,126 @@ export default function Portfolio() {
                     </div>
                 </FadeIn>
 
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-                    <FadeIn x={-30}>
-                        <div className="space-y-6 md:space-y-8">
-                            <div className="flex gap-2">
-                                <span className="px-3 py-1 bg-blue-500/10 border border-blue-500/20 text-blue-400 text-[10px] font-black uppercase tracking-widest rounded italic">Admin Dashboard Pro</span>
+                <div className="grid grid-cols-1 gap-24">
+                    
+                    {/* PROJETO 1 - GESTÃO CORPORATIVA */}
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+                        <FadeIn x={-30}>
+                            <div className="space-y-6 md:space-y-8">
+                                <div className="flex gap-2">
+                                    <span className="px-3 py-1 bg-blue-500/10 border border-blue-500/20 text-blue-400 text-[10px] font-black uppercase tracking-widest rounded italic">Admin Dashboard Pro</span>
+                                </div>
+                                <h3 className="text-4xl md:text-6xl font-black text-white leading-tight md:leading-none tracking-tighter">GESTÃO <br /> CORPORATIVA</h3>
+                                <p className="text-base md:text-xl text-slate-400 leading-relaxed font-medium italic">
+                                    Desenvolvi uma infraestrutura Full Stack para controle de estoque e usuários.
+                                    O projeto foca em segurança, utilizando criptografia e permissões por cargos.
+                                </p>
+                                <div className="flex flex-wrap gap-2 md:gap-3">
+                                    {techStack.map(tech => (
+                                        <span key={tech} className="px-3 py-1.5 md:px-4 md:py-2 bg-white/5 border border-white/10 rounded-lg md:rounded-xl text-[10px] md:text-xs text-slate-300 font-bold uppercase italic tracking-wider">
+                                            {tech}
+                                        </span>
+                                    ))}
+                                </div>
+                                <div className="flex flex-col sm:flex-row gap-6 pt-4">
+                                    <a href="https://admin-front-end-sigma.vercel.app/" target="_blank" rel="noreferrer" className="group flex items-center justify-center sm:justify-start gap-2 text-white font-black text-base md:text-lg hover:text-blue-400 transition duration-300 uppercase italic underline underline-offset-8 decoration-blue-500">
+                                        Live Preview <ExternalLink size={20} />
+                                    </a>
+                                    <a href="https://github.com/anabellypassos" target="_blank" rel="noreferrer" className="group flex items-center justify-center sm:justify-start gap-2 text-slate-500 font-black text-base md:text-lg hover:text-white transition duration-300 uppercase italic">
+                                        Github
+                                    </a>
+                                </div>
                             </div>
-
-                            <h3 className="text-4xl md:text-6xl font-black text-white leading-tight md:leading-none tracking-tighter">GESTÃO <br /> CORPORATIVA</h3>
-
-                            <p className="text-base md:text-xl text-slate-400 leading-relaxed font-medium italic">
-                                Desenvolvi uma infraestrutura Full Stack para controle de estoque e usuários.
-                                O projeto foca em segurança, utilizando criptografia e permissões por cargos.
-                            </p>
-
-                            <div className="flex flex-wrap gap-2 md:gap-3">
-                                {techStack.map(tech => (
-                                    <span key={tech} className="px-3 py-1.5 md:px-4 md:py-2 bg-white/5 border border-white/10 rounded-lg md:rounded-xl text-[10px] md:text-xs text-slate-300 font-bold uppercase italic tracking-wider">
-                                        {tech}
-                                    </span>
-                                ))}
+                        </FadeIn>
+                        <FadeIn x={30} delay={0.2}>
+                            <div className="relative group cursor-pointer">
+                                <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-[1.5rem] md:rounded-[2rem] blur opacity-20 group-hover:opacity-40 transition duration-1000"></div>
+                                <div className="relative rounded-[1.5rem] md:rounded-[2rem] border border-white/10 overflow-hidden shadow-2xl bg-slate-900 aspect-video lg:aspect-auto">
+                                    <img src={adm} className="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 transition duration-700 hover:scale-105" alt="Project Preview" />
+                                </div>
                             </div>
+                        </FadeIn>
+                    </div>
 
-                            <div className="flex flex-col sm:flex-row gap-6 pt-4">
-                                <a href="https://admin-front-end-sigma.vercel.app/" target="_blank" rel="noreferrer" className="group flex items-center justify-center sm:justify-start gap-2 text-white font-black text-base md:text-lg hover:text-blue-400 transition duration-300 uppercase italic underline underline-offset-8 decoration-blue-500">
-                                    Live Preview <ExternalLink size={20} />
-                                </a>
-                                <a href="https://github.com/anabellypassos" target="_blank" rel="noreferrer" className="group flex items-center justify-center sm:justify-start gap-2 text-slate-500 font-black text-base md:text-lg hover:text-white transition duration-300 uppercase italic">
-                                    Github
-                                </a>
+                    {/* PROJETO 2 - DOCMIND */}
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+                        <FadeIn x={-30}>
+                            <div className="space-y-6 md:space-y-8">
+                                <div className="flex gap-2">
+                                    <span className="px-3 py-1 bg-blue-500/10 border border-blue-500/20 text-blue-400 text-[10px] font-black uppercase tracking-widest rounded italic">DocMind AI</span>
+                                </div>
+                                <h3 className="text-4xl md:text-6xl font-black text-white leading-tight md:leading-none tracking-tighter">Workspace Inteligente</h3>
+                                <p className="text-base md:text-xl text-slate-400 leading-relaxed font-medium italic">
+                                    Desenvolvi uma plataforma centralizada de produtividade que combina gestão de documentos com Inteligência Artificial, calendário e tarefas.
+                                </p>
+                                <div className="flex flex-wrap gap-2 md:gap-3">
+                                    {DocMind.map(tech => (
+                                        <span key={tech} className="px-3 py-1.5 md:px-4 md:py-2 bg-white/5 border border-white/10 rounded-lg md:rounded-xl text-[10px] md:text-xs text-slate-300 font-bold uppercase italic tracking-wider">
+                                            {tech}
+                                        </span>
+                                    ))}
+                                </div>
+                                <div className="flex flex-col sm:flex-row gap-6 pt-4">
+                                    <a href="https://office-magic.vercel.app/" target="_blank" rel="noreferrer" className="group flex items-center justify-center sm:justify-start gap-2 text-white font-black text-base md:text-lg hover:text-blue-400 transition duration-300 uppercase italic underline underline-offset-8 decoration-blue-500">
+                                        Live Preview <ExternalLink size={20} />
+                                    </a>
+                                    <a href="https://github.com/anabellypassos" target="_blank" rel="noreferrer" className="group flex items-center justify-center sm:justify-start gap-2 text-slate-500 font-black text-base md:text-lg hover:text-white transition duration-300 uppercase italic">
+                                        Github
+                                    </a>
+                                </div>
                             </div>
-                        </div>
-                    </FadeIn>
-
-                    <FadeIn x={30} delay={0.2}>
-                        <div className="relative group cursor-pointer mt-8 lg:mt-0">
-                            <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-[1.5rem] md:rounded-[2rem] blur opacity-20 group-hover:opacity-40 transition duration-1000"></div>
-                            <div className="relative rounded-[1.5rem] md:rounded-[2rem] border border-white/10 overflow-hidden shadow-2xl bg-slate-900 aspect-video lg:aspect-auto">
-                                <img
-                                    src={adm}
-                                    className="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 transition duration-700 hover:scale-105"
-                                    alt="Project Preview"
-                                />
+                        </FadeIn>
+                        <FadeIn x={30} delay={0.2}>
+                            <div className="relative group cursor-pointer">
+                                <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-[1.5rem] md:rounded-[2rem] blur opacity-20 group-hover:opacity-40 transition duration-1000"></div>
+                                <div className="relative rounded-[1.5rem] md:rounded-[2rem] border border-white/10 overflow-hidden shadow-2xl bg-slate-900 aspect-video lg:aspect-auto">
+                                    <img src={office} className="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 transition duration-700 hover:scale-105" alt="Project Preview" />
+                                </div>
                             </div>
-                        </div>
-                    </FadeIn>
-                    <FadeIn x={-30}>
-                        <div className="space-y-6 md:space-y-8">
-                            <div className="flex gap-2">
-                                <span className="px-3 py-1 bg-blue-500/10 border border-blue-500/20 text-blue-400 text-[10px] font-black uppercase tracking-widest rounded italic">DocMind AI</span>
+                        </FadeIn>
+                    </div>
+
+                    {/* PROJETO 3 - ADVOCACIA */}
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+                        <FadeIn x={-30}>
+                            <div className="space-y-6 md:space-y-8">
+                                <div className="flex gap-2">
+                                    <span className="px-3 py-1 bg-blue-500/10 border border-blue-500/20 text-blue-400 text-[10px] font-black uppercase tracking-widest rounded italic">Web Design & SEO</span>
+                                </div>
+                                <h3 className="text-4xl md:text-6xl font-black text-white leading-tight md:leading-none tracking-tighter">ADVOCACIA <br /> ESTRATÉGICA</h3>
+                                <p className="text-base md:text-xl text-slate-400 leading-relaxed font-medium italic">
+                                    Web site de advocacia totalmente responsivo e otimizado para SEO. 
+                                    Desenvolvido para proporcionar uma presença digital profissional, 
+                                    com foco em alta performance e ranqueamento em mecanismos de busca.
+                                </p>
+                                <div className="flex flex-wrap gap-2 md:gap-3">
+                                    {AdvocaciaStack.map(tech => (
+                                        <span key={tech} className="px-3 py-1.5 md:px-4 md:py-2 bg-white/5 border border-white/10 rounded-lg md:rounded-xl text-[10px] md:text-xs text-slate-300 font-bold uppercase italic tracking-wider">
+                                            {tech}
+                                        </span>
+                                    ))}
+                                </div>
+                                <div className="flex flex-col sm:flex-row gap-6 pt-4">
+                                    <a href="https://site-advocacia-theta.vercel.app/" target="_blank" rel="noreferrer" className="group flex items-center justify-center sm:justify-start gap-2 text-white font-black text-base md:text-lg hover:text-blue-400 transition duration-300 uppercase italic underline underline-offset-8 decoration-blue-500">
+                                        Live Preview <ExternalLink size={20} />
+                                    </a>
+                                    <a href="https://github.com/anabellypassos" target="_blank" rel="noreferrer" className="group flex items-center justify-center sm:justify-start gap-2 text-slate-500 font-black text-base md:text-lg hover:text-white transition duration-300 uppercase italic">
+                                        Github
+                                    </a>
+                                </div>
                             </div>
-
-                            <h3 className="text-4xl md:text-6xl font-black text-white leading-tight md:leading-none tracking-tighter">Workspace Inteligente de Produtividade</h3>
-
-                            <p className="text-base md:text-xl text-slate-400 leading-relaxed font-medium italic">
-                                Desenvolvi uma plataforma centralizada de produtividade que combina gestão de documentos com
-                                Inteligência Artificial, calendário de eventos e lista de tarefas.
-                                O objetivo é reduzir a troca de abas (context switching) ao unir escrita
-                                inteligente e organização em um único lugar.
-                            </p>
-
-                            <div className="flex flex-wrap gap-2 md:gap-3">
-                                {DocMind.map(tech => (
-                                    <span key={tech} className="px-3 py-1.5 md:px-4 md:py-2 bg-white/5 border border-white/10 rounded-lg md:rounded-xl text-[10px] md:text-xs text-slate-300 font-bold uppercase italic tracking-wider">
-                                        {tech}
-                                    </span>
-                                ))}
+                        </FadeIn>
+                        <FadeIn x={30} delay={0.2}>
+                            <div className="relative group cursor-pointer">
+                                <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-[1.5rem] md:rounded-[2rem] blur opacity-20 group-hover:opacity-40 transition duration-1000"></div>
+                                <div className="relative rounded-[1.5rem] md:rounded-[2rem] border border-white/10 overflow-hidden shadow-2xl bg-slate-900 aspect-video lg:aspect-auto">
+                                    {/* Agora a variável 'adv' está definida via import no topo */}
+                                    <img src={adv} className="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 transition duration-700 hover:scale-105" alt="Advocacia Preview" />
+                                </div>
                             </div>
+                        </FadeIn>
+                    </div>
 
-                            <div className="flex flex-col sm:flex-row gap-6 pt-4">
-                                <a href="https://office-magic.vercel.app/" target="_blank" rel="noreferrer" className="group flex items-center justify-center sm:justify-start gap-2 text-white font-black text-base md:text-lg hover:text-blue-400 transition duration-300 uppercase italic underline underline-offset-8 decoration-blue-500">
-                                    Live Preview <ExternalLink size={20} />
-                                </a>
-                                <a href="https://github.com/anabellypassos" target="_blank" rel="noreferrer" className="group flex items-center justify-center sm:justify-start gap-2 text-slate-500 font-black text-base md:text-lg hover:text-white transition duration-300 uppercase italic">
-                                    Github
-                                </a>
-                            </div>
-                        </div>
-                    </FadeIn>
-
-                    <FadeIn x={30} delay={0.2}>
-                        <div className="relative group cursor-pointer mt-8 lg:mt-0">
-                            <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-[1.5rem] md:rounded-[2rem] blur opacity-20 group-hover:opacity-40 transition duration-1000"></div>
-                            <div className="relative rounded-[1.5rem] md:rounded-[2rem] border border-white/10 overflow-hidden shadow-2xl bg-slate-900 aspect-video lg:aspect-auto">
-                                <img
-                                    src={office}
-                                    className="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 transition duration-700 hover:scale-105"
-                                    alt="Project Preview"
-                                />
-                            </div>
-                        </div>
-                    </FadeIn>
                 </div>
             </section>
 
@@ -261,7 +290,7 @@ export default function Portfolio() {
             <section className="py-24 md:py-40 px-4 sm:px-6 text-center relative font-bold italic">
                 <FadeIn>
                     <div className="relative z-10">
-                        <Rocket className="mx-auto mb-6 md:mb-8 text-blue-500 animate-bounce" size={40} className="md:w-14 md:h-14" />
+                        <Rocket className="mx-auto mb-6 md:mb-8 text-blue-500 animate-bounce md:w-14 md:h-14" size={40} />
                         <h2 className="text-4xl sm:text-6xl md:text-8xl font-black text-white mb-6 md:mb-8 tracking-tighter leading-tight uppercase">
                             Vamos construir <br className="hidden sm:block" /> o futuro?
                         </h2>
